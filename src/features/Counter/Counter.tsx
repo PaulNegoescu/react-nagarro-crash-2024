@@ -1,18 +1,25 @@
-import { useState } from "react";
+import { useState } from 'react';
+import clsx from 'clsx';
+import styles from './Counter.module.css';
+
+const initialCount = 0;
 
 export function Counter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(initialCount);
 
   return (
     <div>
       <h1>Counter</h1>
-      <output>{ count }</output>
+      <output className={clsx({ [styles.positive]: count > 0, [styles.negative]: count < 0 })}>
+        {count}
+      </output>
       <p>
-        <button onClick={() => setCount(count-1)}>-</button>
-        <button onClick={() => setCount(3)}>+</button>
+        <button onClick={() => setCount(count - 1)}>-</button>
+        <button onClick={() => setCount(initialCount)}>Reset</button>
+        <button onClick={() => setCount(count + 1)}>+</button>
       </p>
     </div>
-  )
+  );
 }
 
 // return (
@@ -30,6 +37,6 @@ export function Counter() {
 //     state = newState;
 //     Counter();
 //   }
-  
+
 //   return [state, updateState];
 // }

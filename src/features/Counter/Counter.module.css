@@ -1,0 +1,13 @@
+.positive {
+  --font-size: 1em;
+  color: #bada55;
+  font-size: var(--font-size);
+}
+
+.negative {
+  color: #c00;
+}
+
+:global(.myClass) {
+  color: cyan !important;
+}
