@@ -33,6 +33,9 @@ export function Nav() {
         <li>
           <BrandNavLink to="boardgames">Boardgames</BrandNavLink>
         </li>
+        <li>
+          <BrandNavLink to="login">Login</BrandNavLink>
+        </li>
       </menu>
     </nav>
   );
